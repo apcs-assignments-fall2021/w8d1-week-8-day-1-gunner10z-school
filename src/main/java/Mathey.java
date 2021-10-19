@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Mathey {
     /* Write your own version of the Math.max method
      * Your method should be called max
@@ -9,14 +11,31 @@ public class Mathey {
      */
     // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
 
-
+    public static int max(int a,int b){
+        if (a>b){
+            return a;
+        }
+        else if (b>a){
+            return b;
+        }
+        else{
+            return a;
+        }
+    }
 
 
     /* Write another method called max that takes **two doubles**
      * Ex. max(1.2, 4.0) => 4.0
      */
     // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
-
+    public static double max(double a,double b){
+        if (a>b) {
+            return a;
+        }
+        else{
+            return b;
+        }
+    }
 
 
 
@@ -24,7 +43,11 @@ public class Mathey {
      * Ex. max(1, 4, 2) => 4
      */
     // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
-
+    public static int max(int a, int b, int c){
+        int[] arr={a,b,c};
+        Arrays.sort(arr);
+        return arr[2];
+    }
 
 
 
@@ -32,7 +55,11 @@ public class Mathey {
      * Ex. max(1.0, 4.25, 1.3, 2.1) => 4.25
      */
     // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
-
+    public static double max(double a, double b, double c, double d){
+        double[] arr={a,b,c,d};
+        Arrays.sort(arr);
+        return arr[3];
+    }
 
 
 
@@ -45,7 +72,9 @@ public class Mathey {
      *     randomInteger(1, 4) => 4
      */
     // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
-
+    public static int randomInteger(int a, int b){
+        return (int)(Math.random()*(b-a+1)+(a));
+    }
 
 
 
@@ -57,7 +86,9 @@ public class Mathey {
      *     randomInteger(5) => 0
      */
     // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
-
+    public static int randomInteger(int a){
+        return (int)(Math.random()*(a+1));
+    }
 
 
 
@@ -73,7 +104,13 @@ public class Mathey {
      *     pow(3, 4) => 81
      */
     // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
-
+    public static int pow(int a, int b){
+        int thing=a;
+        for (int i=0;i<b-1;i++){
+            thing*=a;
+        }
+        return thing;
+    }
 
 
 
@@ -83,7 +120,12 @@ public class Mathey {
      *     abs(-2) => 2
      */
     // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
-
+    public static int abs(int a){
+        if (a>=0){
+            return a;
+        }
+        return -a;
+    }
 
 
 
@@ -91,23 +133,17 @@ public class Mathey {
      * integer value that you get by rounding that double
      * You may assume that the integer is positive
      * Ex. round(2.4) => 2
-     *     round(2.5) => 2
+     *     round(2.5) => 3
      */
     // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
+    public static int round(double a){
+        return (int)(a+0.5);
+    }
 
 
 
 
 
-    /* Write a method that takes **one double** and returns the
-     * floor of that value
-     * The floor is defined as the **largest** integer that is **less than**
-     * or equal to some value
-     * You may assume that the integer is positive
-     * Ex. floor(2.4) => 2
-     *     floor(2.999999999999) => 2
-     */
-    // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
 
 
 
@@ -122,7 +158,9 @@ public class Mathey {
      *     ceil(3.01) => 4
      */
     // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
-
+    public static int ceil(double a){
+        return (int)(a+1);
+    }
 
 
 
@@ -140,5 +178,18 @@ public class Mathey {
         }
 
         return x1;
+    }
+
+    /* Write a method that takes **one double** and returns the
+     * floor of that value
+     * The floor is defined as the **largest** integer that is **less than**
+     * or equal to some value
+     * You may assume that the integer is positive
+     * Ex. floor(2.4) => 2
+     *     floor(2.999999999999) => 2
+     */
+    // YOUR CODE HERE, METHOD HEADER ALSO REQUIRED
+    public static int floor(double a) {
+        return (int) a;
     }
 }
